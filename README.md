@@ -154,7 +154,7 @@ It was noted that there was a 0-value-issue with the 6th row in the third column
 
 ## Difficulties
 
-### Song Alignment
+### Forced Alignment
 
 - **Polyphonic Segments**: We encountered challenges when it came to aligning the video with the transcript in cases where multiple people are singing. The issue arose as it became difficult to accurately match the speech with the corresponding audio in such scenarios.
 - **Lack of Training Data**: We had a lack of data in the form of songs with corresponding transcripts that included start and end timestamps. This made it difficult to properly align the video with the transcript when people were singing. To overcome this challenge, alternative methods such as using audio separation techniques were used to better isolate the voices in the audio. However, having more comprehensive training data would have greatly improved the accuracy and effectiveness of the alignment process.
@@ -173,6 +173,7 @@ This led to certain genres being confused with other genres more often. To creat
 [(22352, 'Rock'), (17240, 'Hip Hop'), (17002, 'Pop'), (16137, 'Indie'), (14353, 'Heavy Metal'), (12425, 'R&B'), (8657, 'Country')]
 
 The confusion matrix also appeared to be more balanced:
+
 <img width="302" alt="confusion_matrix" src="https://user-images.githubusercontent.com/75620360/216823789-0fbd896d-f5e6-464e-82fa-5fb6ce160425.png">
 
 
