@@ -97,7 +97,7 @@ Finally, the mean IoU for all the songs is calculated, and a bar chart is plotte
 | 4 | Folk               | Tim Buckley - Song to the Siren                                      | 0wBV09TOd9g   | 1970 | 
 | 5 | Rock               | CANDLEBOX - Far Behind                                              | eu3EuWg2qNI   | 1993 |
 | 6 | R&B                | Janet Jackson - Together Again                                      | d5tJviZ-i9k   | 1997 |
-| 7 | EDM                | Beam Me Up (Radio Edit)                                            | 19_5SjoHGfI   | 2013 |
+| 7 | EDM                | Beam Me Up                                                          | 19_5SjoHGfI   | 2013 |
 | 8 | Hip-Hop           | "$UICIDEBOY$" - ANTARCTICA                                            | s1-0lt7b-78   | 2016 |
 
 ### Results
