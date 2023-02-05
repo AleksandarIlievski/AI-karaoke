@@ -89,6 +89,8 @@ Finally, the mean IoU for all the songs is calculated, and a bar chart is plotte
 
 ### Dataset
 
+The evaluation dataset consists of 8 music tracks with their respective genre, title, Youtube-Video-ID and year. The tracks cover a wide range of musical styles and years. This dataset was created with the intention of providing a comprehensive and representative sample for evaluating the performance of the video-transcript alignment model.
+
 | id | Genre              | Title                                                             | Video-ID      | Year |
 | -- | ------------------ | ----------------------------------------------------------------- | ------------- | ---- |
 | 1 | Experimental Rock | John Hammond-Jockey Full of Bourbon                                 | Nd5ySUF6SPM   | 2001 |
