@@ -153,6 +153,11 @@ The second column shows the IoU scores for each audio track with a mean of **0.7
 It was noted that there was a 0-value-issue with the 6th row in the third column, which was a bug that could not be resolved after multiple attempts. Despite this, the mean was still taken over the remaining 7 tracks.
 
 ## Difficulties
+
+- **Polyphonic Segments**: We encountered challenges when it came to aligning the video with the transcript in cases where multiple people are singing. The issue arose as it became difficult to accurately match the speech with the corresponding audio in such scenarios.
+- **Lack of Training Data**: We had a lack of data in the form of songs with corresponding transcripts that included start and end timestamps. This made it difficult to properly align the video with the transcript when people were singing. To overcome this challenge, alternative methods such as using audio separation techniques were used to better isolate the voices in the audio. However, having more comprehensive training data would have greatly improved the accuracy and effectiveness of the alignment process.
+
+
 ## Discussion
 
 ## Acknowledgements
