@@ -154,8 +154,26 @@ It was noted that there was a 0-value-issue with the 6th row in the third column
 
 ## Difficulties
 
+### Song Alignment
+
 - **Polyphonic Segments**: We encountered challenges when it came to aligning the video with the transcript in cases where multiple people are singing. The issue arose as it became difficult to accurately match the speech with the corresponding audio in such scenarios.
 - **Lack of Training Data**: We had a lack of data in the form of songs with corresponding transcripts that included start and end timestamps. This made it difficult to properly align the video with the transcript when people were singing. To overcome this challenge, alternative methods such as using audio separation techniques were used to better isolate the voices in the audio. However, having more comprehensive training data would have greatly improved the accuracy and effectiveness of the alignment process.
+
+### Genre classification
+The main challenge was the training dataset. “Garbage in, garbage out” is a classic saying in machine learning since the state of the training data highly impacts model performance. Therefore, it was important to ensure that the dataset is of high quality. However, it is not possible to go through all the lyrics and check for mistakes such as typos or wrong lyrics. One issue we tried to tackle was the different spelling of certain words (e.g., “talkin’” vs. “talking” or “oooh” vs. “oh”) In order to avoid a bloated vocabulary, we dropped every word below a minimum frequency of 500. We chose that number since songs have a lot of repetition and we didn’t want misspelled words in one song that likely don’t show up in other songs to make it into the vocabulary due to high repetition.
+
+Another issue were the assigned genres to each song. Most songs don’t belong to only one genre but are usually a mixture of and could be assigned to multiple genres. The dataset assigned each song a string of multiple genres such as “Pop; R&B; Black Music”. But predicting the correct combination of genres was not realistic due to the high number of possible combinations. Instead, we split the genres and chose the first one as the label for each song. However, it is questionable if the resulting labels are a good fit for the song. For example, songs by Beyoncé were consequently categorized “Pop” even though one could argue that most of her music is leaning more into “R&B”. Going through each song manually and checking the genre-song-fit would be very time-consuming.
+
+In total there were 73 genres before preprocessing. The goal was to choose 7 samples with the highest sample frequency. However, we noticed a general imbalance in the dataset. Before preprocessing, the frequency of the 20 most frequent labels were: 
+
+[(25177, 'Rock'), (13759, 'Pop'), (13496, 'Heavy Metal'), (12998, 'Indie'), (9589, 'Rap'), (9019, 'Pop/Rock'), (8412, 'Hip Hop'), (7377, 'Country'), (5555, 'Rock Alternativo'), (5309, 'R&B'), (5017, 'Gospel/Religioso'), (4632, 'Hard Rock'), (4518, 'Soul Music'), (4252, 'Dance'), (4157, 'Punk Rock'), (4055, 'Folk'), (3863, 'Soft Rock'), (3680, 'Romântico'), (3112, 'Trilha Sonora'), (3086, 'Jazz')]
+
+This led to certain genres being confused with other genres more often. To create a more balanced dataset, we reassigned some genres based on a thorough analysis of the dataset as well as computing the confusion matrix to see which genres were being mistaken with each other the most. You can find the reassignment in the preprocessing part of our notebook. We ended up combining certain genres with each other, for example merging “Hip Hop” and “Rap” or adding “Folk” to “Indie”. After preprocessing, the dataset was more balanced:
+
+[(22352, 'Rock'), (17240, 'Hip Hop'), (17002, 'Pop'), (16137, 'Indie'), (14353, 'Heavy Metal'), (12425, 'R&B'), (8657, 'Country')]
+
+The confusion matrix also appeared to be more balanced:
+<img width="302" alt="confusion_matrix" src="https://user-images.githubusercontent.com/75620360/216823789-0fbd896d-f5e6-464e-82fa-5fb6ce160425.png">
 
 
 ## Discussion
