@@ -1,4 +1,4 @@
-# AI-Karaoke
+# KaraokeAI
 
 # Table of Contents
 
