@@ -106,6 +106,26 @@ The evaluation dataset consists of 8 music tracks with their respective genre, t
 
 The average IoU between the ground truth and predicted segments of lyrics is calculated and plotted in a bar chart, which can be used to evaluate the performance of the speech recognition system. The mean IoU value and the histogram provide a summary of the performance and can be used to identify areas where the system needs improvement.
 
+#### Usage of Spleeter
+
+[Spleeter](https://github.com/deezer/spleeter) is an open-source audio source separation library developed by Deezer. It uses deep learning techniques to separate an audio signal into its constituent parts, such as vocals, drums, and bass. This allows us to easily isolate the vocal of a song for processing and alignment.
+
+| id | IoU  | IoU without Spleeter |
+| -- | ---- | ------------------- |
+| 1 | 0.68 | 0.62                |
+| 2 | 0.73 | 0.56                |
+| 3 | 0.66 | 0.54                |
+| 4 | 0.77 | 0.51                |
+| 5 | 0.72 | 0.37                |
+| 6 | 0.72 | 0.37                |
+| 7 | 0.64 | 0.24                |
+| 8 | 0.68 | 0.5                 |
+
+The above table shows the results of evaluating the performance with and without the use of Spleeter. The id column represents the identifier of the [evaluation dataset](#dataset). The IoU column shows the average intersection over union score between the ground truth lyrics and the predicted lyrics using Spleeter. The third column shows the average intersection over union score without using the Spleeter tool.
+
+The results indicate that our system performs better when using Spleeter, as the average IoU score is higher in the IoU column compared to the IoU without Spleeter column.
+
+
 **TODO**: add values plots, charts, etc.
 
 ## Difficulties
