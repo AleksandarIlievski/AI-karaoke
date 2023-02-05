@@ -56,8 +56,8 @@ The solution is built using the Jupyter-dash and dash-player libraries. The user
 ## How to Use
 
 1. Start Jupyter Notebook
-1. Run the code
-1. Open a web browser and go to http://localhost:8050/
+2. Run the code
+3. Open a web browser and go to http://localhost:8050/
 4. Input a Youtube link and its transcript in the corresponding fields.
 
 ![input_form](https://user-images.githubusercontent.com/12101077/216789643-df5b1366-4c54-412c-acf7-e09e960631c5.png)
@@ -184,6 +184,16 @@ The confusion matrix also appeared to be more balanced:
 
 ## Discussion
 ### Forced Alignment
+
+As we mentioned the model struggles with segments where the music overlaps with the voice, so we wanted to test more complexe automatic speech recognition models, however they were either unreasonably slow or to large for our memory.
+
+Then we thought that finetuning our current model on specific music audios might improve the quality of the prediction. However, in the instance of this course it was not possible to test this approach because of time and computation complexity.
+
+There already exist a few approaches on how to create a music specific model which we couldn't test because of the lack of time:
+- [Gupta, Chitralekha, et al. "Lyrics-to-audio alignment using singing-adapted acoustic models and non-vocal suppression." Music Inf. Retrieval Eval. eXchange Audio-Lyrics Alignment Challenge (2022).](https://www.music-ir.org/mirex/abstracts/2018/GSLW3.pdf)
+- [Turetsky, Robert J., and Daniel PW Ellis. "Ground-truth transcriptions of real music from force-aligned midi syntheses." (2003): 135-141.](https://www.ee.columbia.edu/~dpwe/pubs/ismir03-midi.pdf)
+
+As conclusion, we can say that our model reaches overall good performance, but could be improved by finetuning or additional approaches.
 
 ### Genre Classification
 
