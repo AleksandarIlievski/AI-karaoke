@@ -154,6 +154,8 @@ It was noted that there was a 0-value-issue with the 6th row in the third column
 
 ## Difficulties
 
+Despite our work on improving our alignment algorithm to deliver the best results possible, it is important to note that some limitations still persist and need to be taken into consideration when using the tool.
+
 ### Forced Alignment
 
 - **Polyphonic Segments**: We encountered challenges when it came to aligning the video with the transcript in cases where multiple people are singing. The issue arose as it became difficult to accurately match the speech with the corresponding audio in such scenarios.
