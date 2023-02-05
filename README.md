@@ -178,6 +178,16 @@ The confusion matrix also appeared to be more balanced:
 
 
 ## Discussion
+###Forced Alignment
+
+###Genre Classification
+It is important to discuss whether song lyrics are an adequate predictor for song genre. Intuitively, audio should be a better predictor than text. [But what audio features would be necessary to predict a songs genre?]( https://towardsdatascience.com/music-genre-classification-with-python-c714d032f0d8) How can we represent frequency, beats per minutes, key, chords or melody which are all detrimental to a genre? For our project, due to time restrictions, complexity as well as the lack of access to a labeled audio dataset, we wanted to investigate the predicting power of song lyrics instead. 
+
+First, we created a simple model with only an embedding layer and a linear layer. The advantage of such simple models is the explainability. We quickly noticed that the model learned to predict songs based on certain words. For example, when there was profanity, it often predicted “Hip Hop”. When the lyrics were about dancing and loving yourself, it tended to predict “Pop”. When the lyrics were about anxiety and depression, it predicted “Indie”. This might sound like an oversimplification or a cliché, but surprisingly it is not as far away from the truth as one might expect. A lot of songs fall victim to this cliché. Therefore, our first simple model didn’t perform that bad in practice. This motivated us to create the model we ended up using for this project. 
+
+While the accuracy might not be that high, it needs to be discussed whether accuracy is an adequate measure for this use case to begin with. Most songs are not exclusive to one genre and even if the model doesn’t predict the correct genre, there is a difference between mistaking “Indie” for “Rock” or mistaking “Indie” for “Hip Hop”. A metric such as RMSE would be more appropriate for measuring “how wrong” the model instead of just evaluating the performance in a binary manner. 
+
+In summary, using song lyrics as a predictor for music genre is flawed, since genres are first and foremost defined by music. However, lyrics have proven to be a valuable help in predicting music genre and could be integrated in a more complex audio recognition model.
 
 ## Acknowledgements
 
