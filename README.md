@@ -68,6 +68,31 @@ The solution is built using the Jupyter-dash and dash-player libraries. The user
 6. Press the Reset button to clear the fields and start over.
 
 ## Evaluation
+
+The purpose of the *Evaluation* folder/code is to evaluate the performance of the video-text-alignment by calculating the Intersection over Union (IoU) between the ground truth and predicted segments of lyrics.
+
+### Requirements
+
+The following packages are required to run the code:
+
+- **pandas**: to read the data from the csv files
+- **numpy**: to calculate mean and histograms
+- **matplotlib**: to plot the results
+
+### How it works
+
+The code reads the data from `eval_list.csv`, which contains the list of songs to evaluate, and for each song, it reads the corresponding `{video_id}.csv` file containing the ground truth and predicted segments of lyrics.
+
+The IoU is calculated between the ground truth and predicted segments of each word, and the average IoU for each song is stored in the dictionary `dict_id2iou`. The histogram of the IoU values, grouped by the length of the segments, is also created and stored in the dictionary `dict_hist`.
+
+Finally, the mean IoU for all the songs is calculated, and a bar chart is plotted to visualize the distribution of the mean IoU values for different length segments.
+
+### Results
+
+The average IoU between the ground truth and predicted segments of lyrics is calculated and plotted in a bar chart, which can be used to evaluate the performance of the speech recognition system. The mean IoU value and the histogram provide a summary of the performance and can be used to identify areas where the system needs improvement.
+
+**TODO**: add values plots, charts, etc.
+
 ## Difficulties
 ## Discussion
 
