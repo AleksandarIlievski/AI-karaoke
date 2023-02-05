@@ -123,7 +123,8 @@ The average IoU between the ground truth and predicted segments of lyrics is cal
 
 The above table shows the results of evaluating the performance with and without the use of Spleeter. The id column represents the identifier of the [evaluation dataset](#dataset). The IoU column shows the average intersection over union score between the ground truth lyrics and the predicted lyrics using Spleeter. The third column shows the average intersection over union score without using the Spleeter tool.
 
-The results indicate that our system performs better when using Spleeter, as the average IoU score is higher in the IoU column compared to the IoU without Spleeter column.
+The mean of the IoU scores with Spleeter is **0.70**, and the mean of the IoU scores without Spleeter is **0.46**. 
+The results indicate that our system performs better when using Spleeter.
 
 
 **TODO**: add values plots, charts, etc.
