@@ -7,6 +7,7 @@
 1. [Dependencies](#dependencies)
 1. [Solution Description](#description)
 1. [How to Use](#how-to-use)
+1. [Result](#result)
 1. [Evaluation](#evaluation)
 1. [Difficulties](#difficulties)
 1. [Discussion](#discussion)
@@ -66,6 +67,10 @@ The solution is built using the Jupyter-dash and dash-player libraries. The user
 ![website](https://user-images.githubusercontent.com/12101077/216789764-ca0965e3-580e-47dd-9a83-c78ba7d3319f.png)
 
 6. Press the Reset button to clear the fields and start over.
+
+## Result
+
+TODO: input video
 
 ## Evaluation
 
