@@ -131,8 +131,26 @@ The above table shows the results of evaluating the performance with and without
 The mean of the IoU scores with Spleeter is **0.70**, and the mean of the IoU scores without Spleeter is **0.46**. 
 The results indicate that our system performs better when using Spleeter.
 
+#### Filtering small segments
 
-**TODO**: add values plots, charts, etc.
+The filtering of data was performed to improve the accuracy of the Intersection over Union calculation. The ground truth data included segments with lengths between 0s and 0.2s, which resulted in a high possibility of these segments receiving an IoU of 0. This is because the resolution of the ground truth data was at 0.1s, meaning that a 0.1s segment can only receive an IoU of 0 or 1 if aligned at the correct 0.1s timestamp. By removing segments with lengths less than or equal to 0.1s and 0.2s, we were able to improve the average IoU by reducing the impact of these short segments on the overall calculation.
+
+| id | IoU (0.1s filter) | IoU (0.2s filter) |
+| --- | --- | --- |
+| 1 | 0.74 | 0.81 |
+| 2 | 0.79 | 0.82 |
+| 3 | 0.72 | 0.78 |
+| 4 | 0.80 | 0.83 |
+| 5 | 0.77 | 0.80 |
+| 6 | 0.75 | 0.00 |
+| 7 | 0.66 | 0.66 |
+| 8 | 0.71 | 0.73 |
+
+We measured the IoU scores for 8 audio tracks. The results were filtered such that words shorter than 0.1s and 0.2s were removed from the IoU calculation for the second and third column, respectively.
+
+The second column shows the IoU scores for each audio track with a mean of **0.74**. The third column shows the IoU scores for each audio track with a mean of **0.78**.
+
+It was noted that there was a 0-value-issue with the 6th row in the third column, which was a bug that could not be resolved after multiple attempts. Despite this, the mean was still taken over the remaining 7 tracks.
 
 ## Difficulties
 ## Discussion
