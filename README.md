@@ -47,7 +47,7 @@ The extracted audio is transformed into a torch tensor and resampled to the targ
 
 ### Genre Classification
 
-The genre of the audio is predicted using a genre classification model trained on data set of X samples including lyrics and their corresponding genres. The audio is passed through the model and the predicted genre is displayed on the website.
+The genre of the audio is predicted based on the song lyrics using a genre classification model trained on data set of 108166 samples including lyrics and their corresponding genres. The model predicts 7 genres: "Rock", "Hip Hop", "Pop", "Indie", "Heavy Metal", "R&B" and "Country". The lyrics of the song are passed through the model and the predicted genre is displayed on the website.
 
 ### Website Building
 
