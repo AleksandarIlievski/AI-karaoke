@@ -70,7 +70,9 @@ The solution is built using the Jupyter-dash and dash-player libraries. The user
 
 ## Result
 
-TODO: input video
+https://user-images.githubusercontent.com/75620360/216835686-722a88e8-6533-4c59-95da-467180db4bad.MOV
+
+
 
 ## Evaluation
 
