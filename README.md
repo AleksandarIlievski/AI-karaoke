@@ -56,9 +56,10 @@ The solution is built using the Jupyter-dash and dash-player libraries. The user
 ## How to Use
 
 1. Start Jupyter Notebook
-2. Run the code
-3. Open a web browser and go to http://localhost:8050/
-4. Input a Youtube link and its transcript in the corresponding fields.
+1. Include the paths of the classification vocab file `vocab.pth` and model `final_model.pth` from [./Genre_classification/](https://github.com/AleksandarIlievski/AI-karaoke/tree/main/Genre_classification) in the preparation step of the notebook.
+1. Run the code
+1. Open a web browser and go to http://localhost:8050/
+1. Input a Youtube link and its transcript in the corresponding fields.
 
 ![input_form](https://user-images.githubusercontent.com/12101077/216789643-df5b1366-4c54-412c-acf7-e09e960631c5.png)
 
